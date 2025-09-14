@@ -1,42 +1,228 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fcfdfd;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-left: 100px;
+  align-items: start;
+  width: 100vw;
+  height: 100vh;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.top-container {
+  width: 100%;
+  border-bottom: 1.8px solid #03c75b;
+  margin-bottom: 20px;
+  margin-left: -100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.top-container-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 2px;
+  margin-left: 100px;
 }
 
-.card {
-  padding: 2em;
+.logo-title-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
-.read-the-docs {
+.naver-logo img {
+  width: 50px;
+  height: 50px;
+  gap: 10px;
+}
+
+.naver-search img {
+  width: 150px;
+  height: 50px;
+  margin-left: 400px;
+}
+
+/* 자동차 카드 UI */
+.car-viewer-card {
+  width: 100%;
+  max-width: 800px;
+  background: linear-gradient(to bottom, #fafbfc, #ffffff);
+  border-radius: 18px;
+  border: 1.6px solid #e7e7ea;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.header {
+  margin-top: 3px;
+  padding-bottom: 16px;
+  margin-bottom: 2px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.header p {
+  margin: 4px 0 0;
+  font-weight: 600;
+  color: #56657F;
+}
+
+/* 3D 캔버스 영역 */
+.canvas-container {
+  width: 100%;
+  height: 220px; 
+  border-radius: 20px;
+  border: 1px solid #c0cad5;
+  overflow: hidden;
+  /* background: linear-gradient(to bottom, #333944, #333944, #333944, #8f99a2); */
+  background: linear-gradient(to bottom, #ced7e4, #ced7e4, #ced7e4, #f0f4fa);
+}
+
+/* 색상 선택 영역 */
+.controls {
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.color-picker {
+  display: flex;
+  gap: 12px;
+}
+
+.color-picker button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease;
+}
+
+.color-picker button:hover {
+  transform: scale(1.1);
+}
+
+/* 선택된 색상 버튼 효과 */
+.color-picker button.selected {
+  border-width: 3px;
+}
+
+.color-name {
+  margin-left: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* 키워드 선택창 스타일 */
+.keyword-selector {
+  display: flex;
+  gap: 6px; 
+  margin-bottom: 20px;
+  overflow-x: auto; 
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.keyword-selector button {
+  padding: 12px 16px;
+  border: 1.4px solid #eff1f5;
+  border-radius: 50px; 
+  background-color: #ffffff; 
+  color: #566780;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap; 
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.keyword-selector button.active {
+  background-color: #8294b5;
+  color: white;
+  border-color: #8294b5;
+  font-weight: 600;
+}
+
+/* 기본 정보 전체 섹션 */
+.info-section {
+  margin-top: 24px;
+}
+
+.info-section h3 {
+  font-size: 20px;
+  margin: 0 0 16px 0;
+}
+
+/* 정보 그리드 (2열 레이아웃) */
+.info-grid {
+  display: grid; 
+  grid-template-columns: 60px 1fr; 
+  gap: 8px; 
+  
+  border-left: 3px solid #f0f2f5; 
+  padding-left: 16px; 
+}
+
+.info-row {
+  display: contents;
+}
+
+/* 라벨 스타일 */
+.info-label {
+  color: #666;
+  font-size: 18px;
+  align-self: center; 
+}
+
+/* 값 스타일 */
+.info-value {
+  color: #222;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* 값 내부의 링크 스타일 */
+.info-value a {
+  color: #0c43b7;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.info-value a:hover {
+  text-decoration: underline;
+}
+
+/* '광고' 태그 스타일 */
+.ad-tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 6px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
   color: #888;
+  margin-left: 4px;
+  vertical-align: middle;
 }
