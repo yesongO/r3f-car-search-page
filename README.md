@@ -1,4 +1,4 @@
-## Week2 : 네이버 자동차 검색 페이지 클론코딩, r3f를 곁들인... 🚘
+## 예송의 mini project : 네이버 자동차 검색 페이지 클론코딩, r3f를 곁들인... 🚘
 ![Image](https://github.com/user-attachments/assets/9129b224-b296-4189-b29c-22666cc8b172)
 ![Image](https://github.com/user-attachments/assets/cb175b0f-e6c8-4eab-80d2-7464d7b4a1d8)
 
